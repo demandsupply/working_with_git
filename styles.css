@@ -19,3 +19,11 @@ li {
     padding: 4px 8px;
 }
 
+footer {
+    background-color: darkorange;
+}
+
+footer p {
+    font-size: 10px;
+    color: aliceblue;
+}

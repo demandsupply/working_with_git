@@ -52,7 +52,7 @@
         <button>Add item</button>
     </div>
 
-    <ul>
+    <ul id="itemList">
 
     </ul>
     <div class="footer-container">
@@ -90,6 +90,32 @@
         para.style.textAlign = "center";
 
         link.classList.add("highlight");
+
+        const list = document.getElementById("itemList");
+        const input = document.querySelector("input");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            let inputValue = input.value;
+            console.log(inputValue);
+            input.value = "";
+
+            const li = document.createElement("li");
+            const span = document.createElement("span");
+            const buttonDelete = document.createElement("button");
+
+            li.appendChild(span);
+            li.appendChild(buttonDelete);
+            span.textContent = inputValue;
+            buttonDelete.textContent = "remove item";
+            list.appendChild(li);
+
+            buttonDelete.addEventListener("click", (e) => {
+                list.removeChild(li);
+            });
+
+            input.focus();
+        })
     </script>
 </body>
 </html>

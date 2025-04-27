@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="./styles.css">
+    <style>
+        .highlight {
+          color: white;
+          background-color: black;
+          padding: 10px;
+          width: 250px;
+          text-align: center;
+        }
+      </style>
 </head>
 <body>
     <div class="nav-container">
@@ -37,5 +46,29 @@
         </footer>
     </div>
     <script src="./javascript.js"></script>
+    <script>
+        const link = document.querySelector("a");
+        link.textContent = "Mozilla Developer Network";
+        link.href = "https://developer.mozilla.org";
+
+        const sect = document.querySelector("section");
+        const para = document.createElement("p");
+        para.textContent = "Everything is there.";
+        sect.appendChild(para);
+
+        const text = document.createTextNode(" - the premier source for web knowledge.");
+        const linkPara = document.querySelector("p");
+        linkPara.appendChild(text);
+
+        sect.appendChild(linkPara)
+
+        para.style.color = "white";
+        para.style.backgroundColor = "black";
+        para.style.padding = "10px";
+        para.style.width = "250px";
+        para.style.textAlign = "center";
+
+        link.classList.add("highlight");
+    </script>
 </body>
 </html>
